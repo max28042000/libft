@@ -15,16 +15,10 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*str;
-	int		i;
 
-	i = 0;
 	str = malloc(size * count);
 	if (!str)
 		return (0);
-	while ((int)(count * size) > i)
-	{
-		*(char *)(str + i) = 0;
-		i++;
-	}
+	ft_bzero(str, count);
 	return (str);
 }
